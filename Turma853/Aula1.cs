@@ -1,6 +1,6 @@
-﻿public class Program
+﻿public class Aula1
 {
-    public static void Main()
+    public static void Main1()
     {
 
         int valorInteiro = 7;
@@ -120,6 +120,9 @@
 
         Console.WriteLine("Conta bancaria completa com digito: " + contaBancaria);
 
+        Console.WriteLine("Insira a data de nascimento do usuário (dd/mm/aaaa): ");
+        bool dValido = DateOnly.TryParse(Console.ReadLine(), out DateOnly data);
+        data.ToString().Split('/').ToList();
 
         // Constantes não podem ser alterados durante o código
         const string VALOR_INVALIDO = "Dados Inválidos";
