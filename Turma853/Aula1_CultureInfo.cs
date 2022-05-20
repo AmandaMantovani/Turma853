@@ -9,7 +9,7 @@ namespace Turma853
 {
     public class Aula1_CultureInfo
     {
-        public static void Main()
+        public static void Mainc()
         {
             decimal valor = 1.74M;
             Console.WriteLine("Cultura padrão {0}.", CultureInfo.CurrentCulture.Name);
@@ -20,7 +20,6 @@ namespace Turma853
 
             Console.WriteLine("Nova cultura padrão {0}.", CultureInfo.CurrentCulture.Name);
             Console.WriteLine(valor);
-
         }
     }
 }
