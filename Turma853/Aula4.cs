@@ -63,39 +63,44 @@ namespace Turma853
 
             //    Console.WriteLine("Local do erro: " + ex.StackTrace);
             //}
-
             try
             {
-                string nome = null;
-                int? idade = null;
+                try
+                {
+                    string nome = null;
+                    int? idade = null;
 
-                if (nome == null)
-                    throw new ArgumentNullException("nome");
+                    if (nome == null)
+                        throw new ArgumentNullException("nome");
 
-                if (idade == null)
-                    throw new ArgumentNullException("idade");
+                    if (idade == null)
+                        throw new ArgumentNullException("idade");
 
-                nome.Trim();
-                nome.Replace(",", "");
+                    nome.Trim();
+                    nome.Replace(",", "");
+                }
+                catch (ArgumentNullException e)
+                {
+                    Console.WriteLine($"O {e.ParamName} não pode ser nulo");
+                    throw e;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Exceção: " + ex.GetType().Name);
+
+                    Console.WriteLine("Mensagem de exceção: " + ex.Message);
+
+                    Console.WriteLine("Local do erro: " + ex.StackTrace);
+                }
+                finally
+                {
+                    Console.WriteLine("Finally");
+                }
             }
-            catch (ArgumentNullException e)
+            catch(Exception ex)
             {
-                Console.WriteLine($"O {e.ParamName} não pode ser nulo");
-                throw e;
+                Console.WriteLine("exceção fora");
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exceção: " + ex.GetType().Name);
-
-                Console.WriteLine("Mensagem de exceção: " + ex.Message);
-
-                Console.WriteLine("Local do erro: " + ex.StackTrace);
-            }
-            finally
-            {
-
-            }
-
             /// Código
         }
     }
