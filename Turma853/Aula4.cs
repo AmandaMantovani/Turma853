@@ -10,6 +10,19 @@ namespace Turma853
     {
         public static void Main()
         {
+            try
+            {
+                Console.WriteLine("Digite uma nota");
+                float nota = float.Parse(Console.ReadLine());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exceção: " + ex.GetType().Name);
+
+                Console.WriteLine("Mensagem de exceção: " + ex.Message);
+
+                Console.WriteLine("Local do erro: " + ex.StackTrace);
+            }
             //try
             //{
             //    Console.WriteLine("Informe um número: ");
@@ -63,44 +76,44 @@ namespace Turma853
 
             //    Console.WriteLine("Local do erro: " + ex.StackTrace);
             //}
-            try
-            {
-                try
-                {
-                    string nome = null;
-                    int? idade = null;
+            //try
+            //{
+            //    try
+            //    {
+            //        string nome = null;
+            //        int? idade = null;
 
-                    if (nome == null)
-                        throw new ArgumentNullException("nome");
+            //        if (nome == null)
+            //            throw new ArgumentNullException("nome");
 
-                    if (idade == null)
-                        throw new ArgumentNullException("idade");
+            //        if (idade == null)
+            //            throw new ArgumentNullException("idade");
 
-                    nome.Trim();
-                    nome.Replace(",", "");
-                }
-                catch (ArgumentNullException e)
-                {
-                    Console.WriteLine($"O {e.ParamName} não pode ser nulo");
-                    throw e;
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Exceção: " + ex.GetType().Name);
+            //        nome.Trim();
+            //        nome.Replace(",", "");
+            //    }
+            //    catch (ArgumentNullException e)
+            //    {
+            //        Console.WriteLine($"O {e.ParamName} não pode ser nulo");
+            //        throw e;
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        Console.WriteLine("Exceção: " + ex.GetType().Name);
 
-                    Console.WriteLine("Mensagem de exceção: " + ex.Message);
+            //        Console.WriteLine("Mensagem de exceção: " + ex.Message);
 
-                    Console.WriteLine("Local do erro: " + ex.StackTrace);
-                }
-                finally
-                {
-                    Console.WriteLine("Finally");
-                }
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine("exceção fora");
-            }
+            //        Console.WriteLine("Local do erro: " + ex.StackTrace);
+            //    }
+            //    finally
+            //    {
+            //        Console.WriteLine("Finally");
+            //    }
+            //}
+            //catch(Exception ex)
+            //{
+            //    Console.WriteLine("exceção fora");
+            //}
             /// Código
         }
     }

@@ -11,28 +11,12 @@ namespace Turma853
 
         public static void Maincc()
         {
-            try
-            {
+            Dictionary<string, string> gentilicos = new Dictionary<string, string>();
+            gentilicos.Add("SP", "Paulista");
+            gentilicos.Add("PB", "Pernambucano");
 
-                string nome = Console.ReadLine();
-                
-                if (nome == null)
-                    throw new ArgumentNullException("nome");
+            var teste = gentilicos["SP"];
 
-                nome.Trim();
-            }
-            catch (ArgumentNullException ex)
-            {
-                Console.WriteLine($"O {ex.ParamName} não pode ser nulo");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exceção: " + ex.GetType().Name);
-
-                Console.WriteLine("Mensagem de exceção: " + ex.Message);
-
-                Console.WriteLine("Local do erro: " + ex.StackTrace);
-            }
         }
 
     }
