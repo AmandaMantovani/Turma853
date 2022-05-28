@@ -8,7 +8,7 @@ namespace Turma853
 {
     public class Aula5
     {
-        static void Main(string[] args)
+        static void MainAula5(string[] args)
         {
             //1)
             //Estruturas de Repetição

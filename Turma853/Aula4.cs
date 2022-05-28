@@ -8,7 +8,7 @@ namespace Turma853
 {
     public class Aula4
     {
-        public static void Main()
+        public static void MainAula4()
         {
             try
             {
